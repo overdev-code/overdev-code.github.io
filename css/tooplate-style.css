@@ -517,6 +517,25 @@ b, strong {
   column-gap: .4rem;
   padding: 0 .8rem;
 }
+.owl-carousel{
+  border-radius: .8rem;
+  /* padding: 1rem; */
+  box-shadow: 10px 10px 60px rgb(170, 173, 190);
+}
+.owl-carousel .item{
+
+}
+.owl-carousel .item .project-info {
+  border-radius: .8rem;
+  overflow: hidden;
+}
+.about-image{
+  background-color: #0d0c15;
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 18rem;
+  border: 6px solid rgb(120, 120, 231);
+}
 @media (min-width: 1270px) {
   .owl-theme .owl-dots {
     position: relative;
