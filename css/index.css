@@ -1,0 +1,180 @@
+body{
+    background-color: #ffffff;
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        rgba(171, 171, 171, 0.35) 1px,
+        transparent 0
+    );
+    background-size: 20px 20px;
+}
+
+/* Animacion de serpiente python */
+/* Contenedor principal */
+#snake-world {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Segmentos del cuerpo con textura */
+#snake-world .snake-segment {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    will-change: transform;
+    background-image: url('https://img.freepik.com/free-vector/abstract-light-green-background-simple-style_1308-160468.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Variaciones de tono con blend-mode */
+#snake-world .snake-segment.color-blue {
+    background-color: rgba(55, 118, 171, 0.75);
+    background-blend-mode: multiply;
+}
+
+#snake-world .snake-segment.color-yellow {
+    background-color: rgba(255, 212, 59, 0.75);
+    background-blend-mode: multiply;
+}
+
+/* Cabeza con imagen fija */
+#snake-world .snake-segment.snake-head {
+    background-image: url('../images/icons/snake-face-clipart-lg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-blend-mode: normal;
+    border: none;
+    box-shadow: none;
+    width: 84px;
+    height: 84px;
+    z-index: 100;
+    overflow: visible;
+    margin-top: -1.5rem;
+}
+
+/* Contenido de la página */
+.page-content .content-section {
+    height: 100vh;
+    padding-left: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #1a1a1a;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* UI Overlay */
+.ui-overlay .instructions {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #666;
+    background: rgba(255,255,255,0.03);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+/* fin animacion serpiente python */
+
+
+
+
+
+/* Sección de Habilidades - Versión Estática */
+.skills-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.skills-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+.skills-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #3498db;
+    bottom: -10px;
+    left: 20%;
+    border-radius: 3px;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 0 1rem;
+}
+.skill-item {
+    width: 100%;
+    max-width: 120px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+.skill-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.skill-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.skill-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+/* Efecto hover más sutil */
+.skill-item:hover .skill-logo {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .skill-logo {
+        width: 70px;
+        height: 70px;
+        padding: 12px;
+    }
+}
