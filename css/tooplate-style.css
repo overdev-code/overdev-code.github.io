@@ -654,12 +654,20 @@ b, strong {
   }
 
   .custom-btn-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
     text-align: center;
   }
 
-  .custom-btn {
-    display: block;
-    margin: 10px 0;
+  .custom-btn-group .custom-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0.75rem 0.45rem;
+    white-space: nowrap;
   }
 
   .owl-theme .owl-nav {
@@ -1245,6 +1253,14 @@ b, strong {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .projects-carousel {
+    display: block;
+  }
+
+  .projects-track {
+    width: 100%;
+  }
+
   .social-links-grid {
     grid-template-columns: 1fr;
   }
@@ -1258,7 +1274,14 @@ b, strong {
   }
 
   .project-card {
-    flex: 0 0 280px;
+    flex: 0 0 100%;
+    min-width: 0;
+    transform: none;
+    opacity: 1;
+  }
+
+  .project-card.active {
+    transform: none;
   }
   
   .project-info {
@@ -1275,8 +1298,28 @@ b, strong {
   }
 
   .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 36px;
     height: 36px;
+    z-index: 6;
+  }
+
+  .carousel-prev {
+    left: 0.4rem;
+  }
+
+  .carousel-next {
+    right: 0.4rem;
+  }
+
+  .carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
   }
 
   .carousel-btn svg {
@@ -1291,7 +1334,7 @@ b, strong {
   }
 
   .project-card {
-    flex: 0 0 260px;
+    flex-basis: 100%;
   }
   
   .project-info {
@@ -1319,6 +1362,14 @@ b, strong {
   .carousel-btn {
     width: 32px;
     height: 32px;
+  }
+
+  .carousel-prev {
+    left: 0.25rem;
+  }
+
+  .carousel-next {
+    right: 0.25rem;
   }
 
   .carousel-btn svg {
