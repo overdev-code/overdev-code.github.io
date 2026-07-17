@@ -1132,6 +1132,11 @@ b, strong {
 }
 
 .project-info img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: .9rem;
   object-fit: contain;
   transition: transform 0.5s ease;
@@ -1257,7 +1262,8 @@ b, strong {
   }
   
   .project-info {
-    height: 150px;
+    height: 180px;
+    padding: 0.75rem 1rem;
   }
   
   .project-content {
@@ -1289,7 +1295,8 @@ b, strong {
   }
   
   .project-info {
-    height: 140px;
+    height: 170px;
+    padding: 0.65rem 0.8rem;
   }
   
   .project-title {
@@ -1461,6 +1468,47 @@ b, strong {
   border-radius: 15px;
   font-size: 0.8rem;
   margin-left: 1rem;
+}
+
+.timeline-info h3 .company-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #1f2937;
+  background: #fff4cc;
+  border: 1px solid rgba(255, 194, 0, 0.5);
+  box-shadow: 0 2px 8px rgba(255, 194, 0, 0.18);
+}
+
+.timeline-info h3 .company-location strong {
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.timeline-info h3 .company-location em {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #8a6100;
+  font-style: normal;
+  font-weight: 700;
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(138, 97, 0, 0.35);
+}
+
+.svg-definitions {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.country-flag {
+  width: 22px;
+  height: 15px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Full width timeline adjustments */
